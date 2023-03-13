@@ -1,5 +1,6 @@
 import customtkinter
 import tkinter
+import time
 import datetime
 
 
@@ -53,15 +54,17 @@ class App:
         self.date_variable = tkinter.StringVar(value=self.date)
         self.date_label = customtkinter.CTkLabel(self.date_frame, textvariable=self.date_variable, text_color=("cyan"))
         self.date_label.pack()
-
-
+        
+        
+        self.time_function()
         self.root.mainloop()
 
     def time_function(self):
         """ Main method that updates time"""
-        pass
-
-
+        current_time = str(time.strftime("%H:%M:%S:%p"))
+        self.time_var.set(value=current_time)
+        self.root.after(1000, self.time_function)
+        
 
 if __name__ == "__main__":
     app = App()
