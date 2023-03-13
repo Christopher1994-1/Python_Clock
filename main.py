@@ -1,5 +1,6 @@
 import customtkinter
 import tkinter
+import datetime
 
 
 
@@ -22,6 +23,7 @@ class App:
         self.root.mainloop()
 
     def time_function(self):
+        """ Main method that updates time"""
         pass
 
 
